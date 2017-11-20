@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<table class="table">
+    <tr>
+        <th>All I Want For Christmas</th>
+        <th><a href="/Home/AddToFavList?Name=All I Want For Christmas">Add to Fav List</a></th>
+    </tr>
+    <tr>
+        <th>Silver Bells</th>
+        <th><a href="/Home/AddToFavList?Name=Silver Bells">Add to Fav List</a></th>
+    </tr>
+    <tr>
+        <th>Ice Ice Baby</th>
+        <th><a href="/Home/AddToFavList?Name=Ice Ice Baby">Add to Fav List</a></th>
+    </tr>
+    <tr>
+        <th>Girls Just Want To Have Fun</th>
+        <th><a href="/Home/AddToFavList?Name=Girls Just Want To Have Fun">Add to Fav List</a></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><a href="/Home/ClearFavList">Clear Fav List</a></th>
+    </tr>
+</table>
+
+    Favorite List:<br />
+@if (ViewBag.FavList != null)
+{
+
+<table>
+    @foreach (var song in ViewBag.FavList)
+    {
+        <tr><th>@song</th></tr>
+    }
+</table>
+}
